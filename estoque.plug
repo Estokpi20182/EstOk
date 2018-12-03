@@ -1,0 +1,10 @@
+[Core]
+Name = Estoque
+Module = estoque
+
+[Python]
+Version = 3
+
+[Documentation]
+Description = Mensagens de estoque
+
