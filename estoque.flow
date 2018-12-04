@@ -1,0 +1,10 @@
+[Core]
+Name = EstoqueFlow
+Module = estoque_flow
+
+[Python]
+Version = 3
+
+[Documentation]
+Description = Mensagens de estoque
+
