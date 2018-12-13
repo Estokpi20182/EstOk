@@ -7,23 +7,23 @@ class EstoqueFlow(BotFlow):
     @botflow
     def adiciona(self, flow: FlowRoot):
         """Adicionar item a lista"""
-        acidiona = flow.connect('adicionar', auto_trigger=True)
-        evai = acidiona.connect('aitem')
+        inicia_adicionar = flow.connect('adicionar', auto_trigger=True)
+        identifica_e_lista_item = inicia_adicionar.connect('item_a_listar')
 
     @botflow
-    def comprar(self, flow: FlowRoot):
-        """Adicionar quantidade a lista"""
-        pergunta = flow.connect('comprei', auto_trigger=True)
-        resposta = pergunta.connect('item')
+    def incrementa(self, flow: FlowRoot):
+        """Incrementar quantidade a lista"""
+        inicia_comprar = flow.connect('comprei', auto_trigger=True)
+        identifica_incrementa_e_verifica_item = inicia_comprar.connect('item_a_incrementar')
 
     @botflow
-    def remover(self, flow: FlowRoot):
-        """Remover quantidade a lista"""
-        qualq = flow.connect('usei', auto_trigger=True)
-        qiusou = qualq.connect('uitem')
+    def reduz(self, flow: FlowRoot):
+        """Reduzir quantidade a lista"""
+        inicia_reduz = flow.connect('usei', auto_trigger=True)
+        identifica_reduz_e_verifica_item = inicia_reduz.connect('item_a_reduzir')
 
     @botflow
-    def oquetem(self, flow: FlowRoot):
+    def estoque(self, flow: FlowRoot):
         """Checar o estoque"""
-        perguntaquanto = flow.connect('estoque', auto_trigger=True)
-        oque = perguntaquanto.connect('qitem')
+        inicia_estoque = flow.connect('estoque', auto_trigger=True)
+        identifica_e_verifica_item = inicia_estoque.connect('item_a_verificar')
